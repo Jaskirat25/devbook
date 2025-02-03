@@ -7,8 +7,8 @@ export default clerkMiddleware(
     if (isProtectedRoute(req)) await auth.protect();
   },
   {
-    signInUrl: "/sign-in",
-    signUpUrl: "/sign-up",
+    signInUrl: "/signin",
+    signUpUrl: "/signup",
   }
 );
 

@@ -68,7 +68,7 @@ export async function POST(req: Request) {
       });
       return new Response("User created", { status: 200 });
     } catch (err) {
-      console.log(err);
+      console.error(err);
       return new Response("Error: Failed to create a user!", {
         status: 500,
       });

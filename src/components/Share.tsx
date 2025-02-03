@@ -5,7 +5,7 @@ import Image from "./Image";
 import NextImage from "next/image";
 import ImageEditor from "./ImageEditor";
 import { useUser } from "@clerk/nextjs";
-import { addPost } from "@/action";
+import { addPost } from "@/actions";
 
 const Share = () => {
   const [media, setMedia] = useState<File | null>(null);

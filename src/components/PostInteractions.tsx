@@ -1,6 +1,6 @@
 "use client";
 
-import { likePost, rePost, savePost } from "@/action";
+import { likePost, rePost, savePost } from "@/actions";
 import { socket } from "@/socket";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
