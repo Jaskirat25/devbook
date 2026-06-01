@@ -11,7 +11,9 @@ export async function GET(request: NextRequest) {
 
   const { userId } = await auth();
 
-  if (!userId) return;
+  if (!userId) {
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const whereCondition =
     userProfileId !== "undefined"

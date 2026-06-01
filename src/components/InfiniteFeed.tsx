@@ -6,7 +6,7 @@ import Post from "./Post";
 
 const fetchPosts = async (pageParam: number, userProfileId?: string) => {
   const res = await fetch(
-    "http://localhost:3000/api/posts?cursor=" +
+    "/api/posts?cursor=" +
       pageParam +
       "&user=" +
       userProfileId
@@ -20,7 +20,7 @@ const InfiniteFeed = ({ userProfileId }: { userProfileId?: string }) => {
     queryFn: ({ pageParam = 2 }) => fetchPosts(pageParam, userProfileId),
     initialPageParam: 2,
     getNextPageParam: (lastPage, pages) =>
-      lastPage.hasMore ? pages.length + 2 : undefined,
+      lastPage?.hasMore ? pages.length + 2 : undefined,
   });
 
   if (error) return "Something went wrong!";
@@ -28,7 +28,7 @@ const InfiniteFeed = ({ userProfileId }: { userProfileId?: string }) => {
 
   console.log(data);
 
-  const allPosts = data?.pages?.flatMap((page) => page.posts) || [];
+  const allPosts = data?.pages?.flatMap((page) => page.posts || []) || [];
 
   return (
     <InfiniteScroll

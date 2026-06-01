@@ -72,7 +72,7 @@ const LeftBar = async () => {
   const user = await currentUser();
 
   return (
-    <div className="h-screen sticky top-0 flex flex-col justify-between pt-2 pb-8">
+    <div className="h-screen sticky top-0 flex flex-col justify-between pt-2 pb-8 bg-glassmorphic">
       {/* LOGO MENU BUTTON */}
       <div className="flex flex-col gap-4 text-lg items-center xxl:items-start">
         {/* LOGO */}
@@ -90,7 +90,7 @@ const LeftBar = async () => {
               )}
               <Link
                 href={item.link}
-                className="p-2 rounded-full hover:bg-[#181818] flex items-center gap-4"
+                className="p-2 rounded-full flex items-center gap-4 transition-colors duration-200 hover:bg-[#181818] hover:scale-105 hover:shadow-lg bg-glassmorphic"
               >
                 <Image
                   path={`icons/${item.icon}`}

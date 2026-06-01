@@ -1,6 +1,6 @@
 "use client";
 
-import { followUser } from "@/action";
+import { followUser } from "@/actions";
 import { socket } from "@/socket";
 import { useUser } from "@clerk/nextjs";
 import { useOptimistic, useState } from "react";
